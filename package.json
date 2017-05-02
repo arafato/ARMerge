@@ -1,0 +1,22 @@
+{
+  "name": "armerge",
+  "version": "0.0.1",
+  "description": "A CLI to easily merge arbitrarily nested linked ARM Templates into one single file to simplify provisioning from localhost.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arafato/ARMerge.git"
+  },
+  "keywords": [
+    "azure"
+  ],
+  "author": "Oliver Arafat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arafato/ARMerge/issues"
+  },
+  "homepage": "https://github.com/arafato/ARMerge#readme"
+}

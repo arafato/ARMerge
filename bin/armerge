@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const BbPromise = require('bluebird');
+
+process.on('unhandledRejection', (e) => {
+    console.error('[PANIC] Something completely unexpected happened:');
+    console.error(e);
+});
+process.noDeprecation = true;
+
+(() => BbPromise.resolve().then(() => {
+    // requiring here so that if anything went wrong,
+    // during require, it will be caught.
+    const version = require('../package.json').version;
+    const argv = require('yargs')
+        .usage(`ARMerge v${version}\nUsage: $0 -i [entry file] -o [merged file]`)
+        .options('i', {
+            demand: true,
+            alias: 'input',
+            desc: 'The entry ARM Template file'
+        })
+        .options('o', {
+            alias: 'output',
+            desc: 'The output merged ARM template file',
+            default: 'out.json'
+        })
+        .argv;
+
+    const A = require('../lib/ARMerge'),
+        armerge = new A();
+    armerge.init(argv);
+}).catch(e => {
+    process.exitCode = 1;
+    console.error(e);
+}))();

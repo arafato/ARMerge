@@ -6,17 +6,31 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=4.0"
+  },
+   "bin": {
+    "armerge": "./bin/armerge"
+  },
+  "preferGlobal": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arafato/ARMerge.git"
   },
   "keywords": [
-    "azure"
+    "azure",
+    "microsoft",
+    "azure resource manager",
+    "devops"
   ],
   "author": "Oliver Arafat",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/arafato/ARMerge/issues"
   },
-  "homepage": "https://github.com/arafato/ARMerge#readme"
+  "homepage": "https://github.com/arafato/ARMerge#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "yargs": "^7.1.0"
+  }
 }
